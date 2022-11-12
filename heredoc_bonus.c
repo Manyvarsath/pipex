@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkamal <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: bkamal <bkamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 23:47:22 by bkamal            #+#    #+#             */
-/*   Updated: 2022/06/09 00:24:05 by bkamal           ###   ########.fr       */
+/*   Updated: 2022/11/12 01:29:28 by bkamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	mode_heredoc(char **av, char *const env[])
 	{
 		write(1, "> ", 2);
 		temp = get_next_line(0);
-		if (ft_strncmp(av[2], temp, ft_strlen(av[2])) == 0)
+		if (!ft_strncmp(av[2], temp, ft_strlen(av[2])) && (ft_strlen(temp) == (ft_strlen(av[2]) + 1)))
 			break ;
 		write(temp_file, temp, ft_strlen(temp));
 		free(temp);
